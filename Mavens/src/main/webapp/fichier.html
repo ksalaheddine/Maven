@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="UTF-8">
+		<title>GESTION DES CONTACTES  </title>
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		
+		<link rel="shortcut icon" href="favicon.ico" />
+		
+		<!-- on spécifie le framework ( screen ;) )-->
+		<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		
+		<!-- on défini les icones -->
+		
+			<!-- 2 type d'icone les icones de fonts et les icones des barres -->
+			<link href="assets/icons/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen">
+			<!-- icones des jnab ;) -->	
+			<link href="assets/icons/ionicons/css/ionicons.min.css" rel="stylesheet" media="screen">
+		
+	
+	<!-- on spécifie le stylesheet de la page -->
+
+		
+		<link rel="stylesheet" href="assets/lib/novus-nvd3/nv.d3.min.css">
+
+		<link rel="stylesheet" href="assets/lib/owl-carousel/owl.carousel.css">
+				
+
+		<link href="assets/css/style.css" rel="stylesheet" media="screen">
+		
+	
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400&amp;subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+		
+		<!-- on aura besoin de ce script pour l'agenda sinon nous pourrons pas définir le temps ;) -->
+		<script src="assets/lib/moment-js/moment.min.js"></script>
+			<!-- daba on commence le booddyy-->
+    </head>
+
+<body>
+
+	<div id="main_wrapper">
+			<div class="page_content">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="panel panel-default">
+								<div class="panel-heading">Multiupload</div>
+								<div class="panel-body">
+									<form id="fileupload" action="/traitements" method="POST" enctype="multipart/form-data" class="multiupload">
+										<!-- Redirect browsers with JavaScript disabled to the origin page -->
+										<noscript>Ajouter un fichier .</noscript>
+										<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+										<div class="row fileupload-buttonbar">
+											<div class="col-lg-7">
+												<!-- The fileinput-button span is used to style the file input field as button -->
+												<span class="btn btn-success fileinput-button">
+													<i class="glyphicon glyphicon-plus"></i>
+													<span>Ajouter un fichier...</span>
+													<input type="file" name="files[]" multiple>
+												</span>
+												<button type="submit" class="btn btn-primary start">
+													<i class="glyphicon glyphicon-upload"></i>
+													<span>Commencer l'upload</span>
+												</button>
+												<button type="reset" class="btn btn-warning cancel">
+													<i class="glyphicon glyphicon-ban-circle"></i>
+													<span>Arreter </span>
+												</button>
+												
+												<!-- The loading indicator is shown during file processing -->
+												<span class="fileupload-loading"></span>
+											</div>
+											<!-- The global progress information -->
+											<div class="col-lg-5 fileupload-progress fade sepH_a">
+												<!-- The extended global progress information -->
+												<div class="progress-extended sepH_a">&nbsp;</div>
+												<!-- The global progress bar -->
+												<div class="progress progress-small progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+													<div class="progress-bar progress-success" style="width:0%;"></div>
+												</div>
+											</div>
+										</div>
+										<!-- The table listing the files available for upload/download -->
+										<table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+									</form>
+									
+									<!-- The template to display files available for upload -->
+							<hr>
+												<div class="text-center">
+													<a href="index.html" class="btn btn-success"><i  class="glyphicon glyphicon-fast-backward"></i> ACCUEIL</q>
+													<a href="liste.html" class="btn btn-default"><i class="glyphicon glyphicon-step-backward"></i>LISTES DES CONTACTS</a>
+												</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+			<script src="assets/js/jquery.min.js"></script>
+		<!-- easing -->
+		<script src="assets/js/jquery.easing.1.3.min.js"></script>
+		<!-- bootstrap js plugins -->
+		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+		<!-- top dropdown navigation -->
+		<script src="assets/js/tinynav.min.js"></script>
+		<!-- perfect scrollbar -->
+		<script src="assets/lib/perfect-scrollbar/min/perfect-scrollbar-0.4.8.with-mousewheel.min.js"></script>
+		
+		<!-- common functions -->
+		<script src="assets/js/tisa_common.js"></script>
+		
+		<!-- style switcher -->
+		<script src="assets/js/tisa_style_switcher.js"></script>
+		
+	<!-- page specific plugins -->
+
+		<!-- multiupload -->
+		<script src="assets/lib/jQuery-UI/jquery.ui.widget.min.js"></script>
+		<script src="assets/lib/jQuery-File-Upload/js/extras/tmpl.min.js"></script>
+		<script src="assets/lib/jQuery-File-Upload/js/extras/load-image.min.js"></script>
+		<script src="assets/lib/jQuery-File-Upload/js/extras/canvas-to-blob.min.js"></script>
+		<script src="assets/lib/jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
+		<script src="assets/lib/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+		<script src="assets/lib/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
+		<script src="assets/lib/jQuery-File-Upload/js/jquery.fileupload-image.js"></script>
+		<script src="assets/lib/jQuery-File-Upload/js/jquery.fileupload-audio.js"></script>
+		<script src="assets/lib/jQuery-File-Upload/js/jquery.fileupload-video.js"></script>
+		<script src="assets/lib/jQuery-File-Upload/js/jquery.fileupload-validate.js"></script>
+		<script src="assets/lib/jQuery-File-Upload/js/jquery.fileupload-ui.js"></script>
+		
+		<!-- ecommerce functions -->
+		<script src="assets/js/apps/tisa_multiupload.js"></script>
+		
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-49181536-1']);
+		_gaq.push(['_trackPageview']);
+	  
+		(function() {
+		  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</body>
+</html>

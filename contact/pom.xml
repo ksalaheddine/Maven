@@ -7,6 +7,9 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>contact Maven Webapp</name>
   <url>http://maven.apache.org</url>
+   <properties>
+       <jetty.version>7.1.6.v20100715</jetty.version>
+   </properties>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -14,6 +17,13 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+        <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-server</artifactId>
+      <version>${jetty.version}</version>
+   
+    </dependency>
+    
   </dependencies>
   <build>
     <finalName>contact</finalName>
