@@ -1,5 +1,11 @@
 
-<!DOCTYPE html>
+<%@page import="Metier.Users"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="web.UsersBean"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html>
     <head>
 		<meta charset="UTF-8">
@@ -34,6 +40,15 @@
 		
     </head>
     <body>
+    
+    <%
+    
+    UsersBean U;
+    if(request.getAttribute("msg")!=null){ U = (UsersBean)request.getAttribute("msg");}else{
+    	U = new UsersBean();
+    }
+    
+    %>
 		<!-- top bar -->
 	
 		
@@ -59,7 +74,12 @@
 											</tr>
 										</thead>
 	
-										
+							<%
+							Iterator <Users> list = U.getUsersList().iterator();
+							while(list.hasNext()){
+								Users p = list.next();
+								
+					     %>			
 										<tr>
 									
 									
@@ -68,17 +88,20 @@
 											</td>
 										
 											<td> 
-												<h5><a href="detail.html"> Non complet </a></h5>
+												<h5><a href="detail.jsp?id=<%=p.getId()%>"><%=p.getNom() %> <%=p.getPrenom() %> </a></h5>
 										
 											</td>
-											<td class="sub_col"> Numero de telephone ici </td>
+											<td class="sub_col"> <%=p.getNumero() %> </td>
 											
 									
 						
-											<td class="sub_col"><strong> email ici </strong></td>
+											<td class="sub_col"><strong> <%=p.getEmail() %> </strong></td>
 											
-											<td class="sub_col"><a href="detail.html" class="btn btn-default btn-sm"><span class="fa fa-pencil-square-o fa-lg"></span> Details</a></td>
+											<td class="sub_col"><a href="detail.jsp?id=<%=p.getId()%>"  class="btn btn-default btn-sm"><span class="fa fa-pencil-square-o fa-lg"></span> Details</a></td>
 										</tr>
+										
+									
+					     <%} %>   
 									
 										
 									</table>

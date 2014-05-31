@@ -6,7 +6,32 @@
             30
         </session-timeout>
     </session-config>
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-        </welcome-file-list>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>AddUsersServlet</display-name>
+    <servlet-name>AddUsersServlet</servlet-name>
+    <servlet-class>Servlets.AddUsersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddUsersServlet</servlet-name>
+    <url-pattern>/AddUsersServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListAllUserServlet</display-name>
+    <servlet-name>ListAllUserServlet</servlet-name>
+    <servlet-class>Servlets.ListAllUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListAllUserServlet</servlet-name>
+    <url-pattern>/ListAllUserServlet</url-pattern>
+  </servlet-mapping>
     </web-app>

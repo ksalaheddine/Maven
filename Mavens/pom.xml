@@ -23,8 +23,27 @@
       <version>2.1</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+	<groupId>mysql</groupId>
+	<artifactId>mysql-connector-java</artifactId>
+	<version>5.1.6</version>
+</dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.8.1</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
+<mailingLists>
+  <mailingList>
+      <name> salaheddine </name>
+      <subscribe>s2death</subscribe>
+     
+      <post>k.salaheddine@hotmail.fr</post>
 
+    </mailingList>
+      </mailingLists>
   <build>
     <plugins>
       <plugin>
@@ -35,7 +54,18 @@
           <source>1.4</source>
           <target>1.4</target>
         </configuration>
-      </plugin>
+      </plugin>        
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat6-maven-plugin</artifactId>
+          <version>2.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <version>2.2</version>
+        </plugin>
     </plugins>
+    
   </build>
 </project>
